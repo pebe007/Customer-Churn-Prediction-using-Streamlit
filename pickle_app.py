@@ -2,9 +2,9 @@
 import streamlit as st
 import numpy as np
 import pickle
-from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
-
+from models import MyXGBoostClassifier
+from models import RandomForest
 # Mapping dictionaries for Geography and Gender
 geography_mapping = {'France': 0, 'Germany': 1, 'Spain': 2}
 gender_mapping = {'Male': 0, 'Female': 1}
@@ -45,9 +45,9 @@ def main():
 
     input_data = np.array([[credit_score, geography_encoded, gender_encoded, age, tenure, balance, num_products, has_credit_card, is_active_member, estimated_salary]]).astype(np.float64)
     
-    # pickle_in = open('model.pkl', 'rb')
-    # pickle_model = pickle.load(pickle_in)
-    # prediction = pickle_model.predict(input_data)
+    pickle_in = open('model.pkl', 'rb')
+    pickle_model = pickle.load(pickle_in)
+    prediction = pickle_model.predict(input_data)
 
     if st.button("Make Prediction"):
         prediction = pickle_model.predict(input_data)
