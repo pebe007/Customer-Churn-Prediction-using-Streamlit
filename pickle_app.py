@@ -2,7 +2,6 @@
 import streamlit as st
 import numpy as np
 import pickle
-from models import MyXGBoostClassifier,RandomForest
 # Mapping dictionaries for Geography and Gender
 geography_mapping = {'France': 0, 'Germany': 1, 'Spain': 2}
 gender_mapping = {'Male': 0, 'Female': 1}
