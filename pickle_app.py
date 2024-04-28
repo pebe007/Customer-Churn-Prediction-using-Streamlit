@@ -8,8 +8,6 @@ gender_mapping = {'Male': 0, 'Female': 1}
 
 # define your app content
 def main():
-    from models import MyXGBoostClassifier
-    from models import RandomForest
     st.info("Credit Score")
     credit_score = st.number_input("Enter Credit Score", value=0)
 
